@@ -1,6 +1,6 @@
 import { Totalizavel } from "./Totalizavel.js";
 import { Entidade } from "./Entidade.js"
-
+//falta MUCHA coisa!!!
 export class Venda extends Entidade{
     constructor(){
         this.dataHora = new Date().toLocaleString();
@@ -8,4 +8,5 @@ export class Venda extends Entidade{
     }
 }
 
+//isso aqui ta errado inclusive
 Totalizavel(Venda);

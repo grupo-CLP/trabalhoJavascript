@@ -1,8 +1,14 @@
 import { MenuEntidade } from "./MenuEntidade.js";
+import { DAOProduto } from "../Data/DAOProduto.js";
+import { Produto } from "../entidades/Produto.js";
+
 
 export class MenuProduto extends MenuEntidade{
+    
+    
     constructor(){
-        // instanciar o DAO
+        super();
+        this.dao = DAOProduto.getInstance();
     }
 
     mostrarTitulo(){
@@ -10,7 +16,7 @@ export class MenuProduto extends MenuEntidade{
     }
 
     listar(){
-        //implementar dps
+        console.log(this.dao.toString());
     }
 
     adicionar(){
@@ -31,7 +37,7 @@ export class MenuProduto extends MenuEntidade{
                 console.log(err.message);
             }
 
-            //add no banco de dados
+            this.dao.adicionar(new Produto(nome, valor));
         }
     }
 
@@ -51,6 +57,6 @@ export class MenuProduto extends MenuEntidade{
             }
         }
 
-        // remover do banco
+        this.dao.remover(nome);
     }
 }
