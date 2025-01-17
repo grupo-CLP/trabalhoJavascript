@@ -1,9 +1,15 @@
 import { MenuEntidade } from './MenuEntidade.js';
+import { DAOVenda } from '../Data/DAOVenda.js';
+import { DAOProduto } from '../Data/DAOProduto.js';
+import { Venda } from '../entidades/Venda.js';
+import { Produto } from '../entidades/Produto.js';
 
 export class MenuVenda extends MenuEntidade{
 
     constructor(){
-        //instanciar DAOs
+        super();
+        daoVenda = DAOVenda.getInstance();
+        daoProduto = DAOProduto.getInstance();
     }
 
     mostrarTitulo(){
@@ -11,41 +17,59 @@ export class MenuVenda extends MenuEntidade{
     }
 
     listar(){
-        //implementar dps
+        console.log(this.daoVenda.toString());
     }
 
     adicionar(){
-        //instanciar uma venda
-        produto == null;
+        venda = new Venda()
+        let produto = null;
 
         qtde = 0;
 
         while(true){
-            try{
-                //produto = daoProduto.buscar(prompt("Digite o nome do produto: \n"));
-                qtde = Number(prompt("Digite a quantidade: \n"));
-                
-                if(produto == null || qtde <= 0)
-                    throw new Error("Favor informar os dados corretamente\n");
-                else
-                    break;
-            } catch(err){
-                console.log(err.message);
+            while(true){
+                try{
+                    produto = daoProduto.buscar(prompt("Digite o nome do produto: \n"));
+                    qtde = Number(prompt("Digite a quantidade: \n"));
+                    
+                    if(produto == null || qtde <= 0)
+                        throw new Error("Favor informar os dados corretamente\n");
+                    else
+                        break;
+                } catch(err){
+                    console.log(err.message);
+                }
             }
-            // add venda no banco
-    
-            maisItens = Number(prompt("Deseja adicionar outro produto à venda (1 - SIM/0 - NAO)? \n"));
-    
-            if(maisItens != 1)
-                break;
+                venda.adicionarItem(produto, qtde);
+        
+                maisItens = Number(prompt("Deseja adicionar outro produto à venda (1 - SIM/0 - NAO)? \n"));
+        
+                if(maisItens != 1)
+                    break;
+            
         }
+        console.log("\n\nNOTA FISCAL\n" + venda.toString());
 
-        // printar nota fiscal com venda.toString()
-
-        //add venda ao banco
+        daoVenda.adicionar(venda);
     }
 
     remover(){
-        
+        id = 0;
+
+        while(true){
+
+            try{
+                id = Number(prompt("Digite a quantidade: \n"));
+
+                if (id <= 0.0)
+                    throw new Error("Favor informar os dados corretamente\n");
+                else 
+                    break;
+
+            } catch(err) {
+                console.log(err.message);
+            }
+        }
+        daoVenda.remover(id);
     }
 }
