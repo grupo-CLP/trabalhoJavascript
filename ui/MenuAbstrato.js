@@ -1,9 +1,8 @@
 export class MenuAbstrato{
 
     constructor(){
-        if(this.constructor == MenuAbstrato){
+        if(this.constructor == MenuAbstrato)
             throw new Error("Classes abstratas não podem ser instanciadas\n");
-        }
     }
 
     mostrarMenu(){

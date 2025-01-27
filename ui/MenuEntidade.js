@@ -3,9 +3,12 @@ import { MenuAbstrato } from "./MenuAbstrato.js";
 export class MenuEntidade extends MenuAbstrato{
 
     constructor(){
-        if(this.constructor == MenuAbstrato){
-            throw new Error("Classes abstratas não podem ser instanciadas\n");
+        if(this.constructor == MenuAbstrato)constructor(){
+            if(this.constructor == MenuAbstrato)
+                throw new Error("Classes abstratas não podem ser instanciadas\n");
+            this.id = +new Date();
         }
+            throw new Error("Classes abstratas não podem ser instanciadas\n");
     }
 
     listar(){

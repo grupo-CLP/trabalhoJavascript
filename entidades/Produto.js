@@ -31,6 +31,6 @@ export class Produto extends Entidade{
     }
     
     toString() {
-        return `${super.toString}Nome: ${this.nome}\tValor: ${this.valor}`;
+        return `${super.toString}Nome: ${this.nome}\tValor: ${this.valor.toFixed(2)}`;
     }
 }
