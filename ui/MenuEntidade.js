@@ -20,6 +20,9 @@ export class MenuEntidade extends MenuAbstrato{
         throw new Error("Metodo deve ser implementado\n");
     }
 
+    /**
+     * @override
+     */
     executarOpcao(opcao){
         switch(opcao){
             case 0:
@@ -42,7 +45,10 @@ export class MenuEntidade extends MenuAbstrato{
         }
 
     }
-    
+
+    /**
+     * @override
+     */
     mostrarOpcoes(){
         console.log(
             "0 -> VOLTAR\n"+

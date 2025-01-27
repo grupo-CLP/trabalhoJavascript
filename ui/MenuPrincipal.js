@@ -9,6 +9,9 @@ export class MenuPrincipal extends MenuAbstrato{
         this.menuVenda = new MenuVenda();
     }
 
+    /**
+     * @override
+     */
     executarOpcao(opcao){
         switch(opcao){
             case 0:
@@ -29,6 +32,9 @@ export class MenuPrincipal extends MenuAbstrato{
         return 1;
     }
 
+    /**
+     * @override
+     */
     mostrarOpcoes(){
         console.log((
             "0 -> FECHAR PROGRAMA\n" +
@@ -36,6 +42,9 @@ export class MenuPrincipal extends MenuAbstrato{
             "2 -> VENDA\n"));
     }
 
+    /**
+     * @override
+     */
     mostrarTitulo(){
         console.log("MENU PRINCIPAL\n")
     }

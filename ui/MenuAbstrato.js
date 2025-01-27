@@ -6,6 +6,18 @@ export class MenuAbstrato{
         }
     }
 
+    mostrarMenu(){
+        let opcao = 0;
+        
+        do{
+            console.log("\n\n");
+            mostrarTitulo();
+            mostrarOpcoes();
+            opcao = executarOpcao(Number(prompt("INFORME A SUA OPCAO: \n")));
+        }while(opcao != 0);
+    }
+
+
     executarOpcao(opcao){
         throw new Error("Metodo deve ser implementado\n");
     }
@@ -16,17 +28,5 @@ export class MenuAbstrato{
 
     mostrarTitulo(){
         throw new Error("Metodo deve ser implementado\n");
-    }
-
-    mostrarMenu(){
-        let opcao = 0;
-
-        do{
-            console.log("\n\n");
-            mostrarTitulo();
-            mostrarOpcoes();
-            console.log("INFORME A SUA OPCAO: \n");
-            opcao = executarOpcao();
-        }while(opcao != 0);
     }
 }

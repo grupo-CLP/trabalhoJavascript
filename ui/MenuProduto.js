@@ -11,14 +11,23 @@ export class MenuProduto extends MenuEntidade{
         this.dao = DAOProduto.getInstance();
     }
 
+    /**
+     * @override
+     */
     mostrarTitulo(){
         console.log("MENU PRODUTOS");
     }
 
+    /**
+     * @override
+     */
     listar(){
         console.log(this.dao.toString());
     }
 
+    /**
+     * @override
+     */
     adicionar(){
         nome = null;
         valor = 0.0;
@@ -41,6 +50,9 @@ export class MenuProduto extends MenuEntidade{
         }
     }
 
+    /**
+     * @override
+     */
     remover(){
         nome = null;
 
@@ -56,7 +68,6 @@ export class MenuProduto extends MenuEntidade{
                 console.log(err.message);
             }
         }
-
         this.dao.remover(nome);
     }
 }

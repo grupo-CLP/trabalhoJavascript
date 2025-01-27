@@ -2,24 +2,34 @@ import { MenuEntidade } from './MenuEntidade.js';
 import { DAOVenda } from '../Data/DAOVenda.js';
 import { DAOProduto } from '../Data/DAOProduto.js';
 import { Venda } from '../entidades/Venda.js';
+//produto é usado sim, apenas nao explicitamente
 import { Produto } from '../entidades/Produto.js';
 
 export class MenuVenda extends MenuEntidade{
 
     constructor(){
         super();
-        daoVenda = DAOVenda.getInstance();
-        daoProduto = DAOProduto.getInstance();
+        this.daoVenda = DAOVenda.getInstance();
+        this.daoProduto = DAOProduto.getInstance();
     }
 
+    /**
+     * @override
+     */
     mostrarTitulo(){
         console.log("MENU VENDAS");
     }
 
+    /**
+     * @override
+     */
     listar(){
         console.log(this.daoVenda.toString());
     }
 
+    /**
+     * @override
+     */
     adicionar(){
         venda = new Venda()
         let produto = null;
@@ -29,7 +39,7 @@ export class MenuVenda extends MenuEntidade{
         while(true){
             while(true){
                 try{
-                    produto = daoProduto.buscar(prompt("Digite o nome do produto: \n"));
+                    produto = this.daoProduto.buscar(prompt("Digite o nome do produto: \n"));
                     qtde = Number(prompt("Digite a quantidade: \n"));
                     
                     if(produto == null || qtde <= 0)
@@ -50,9 +60,12 @@ export class MenuVenda extends MenuEntidade{
         }
         console.log("\n\nNOTA FISCAL\n" + venda.toString());
 
-        daoVenda.adicionar(venda);
+        this.daoVenda.adicionar(venda);
     }
 
+    /**
+     * @override
+     */
     remover(){
         id = 0;
 
@@ -70,6 +83,6 @@ export class MenuVenda extends MenuEntidade{
                 console.log(err.message);
             }
         }
-        daoVenda.remover(id);
+        this.daoVenda.remover(id);
     }
 }
