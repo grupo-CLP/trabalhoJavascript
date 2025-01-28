@@ -1,4 +1,4 @@
-import { Entidade } from "../entidades/Entidade.js";
+import { Entidade } from "../entidades/Entidade.mjs";
 
 export class DAO{
     constructor(){

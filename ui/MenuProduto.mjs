@@ -1,6 +1,6 @@
 import { MenuEntidade } from "./MenuEntidade.js";
 import { DAOProduto } from "../Data/DAOProduto.js";
-import { Produto } from "../entidades/Produto.js";
+import { Produto } from "../entidades/Produto.mjs";
 
 
 export class MenuProduto extends MenuEntidade{

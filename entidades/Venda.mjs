@@ -1,8 +1,6 @@
-import { Totalizavel } from "./Totalizavel.js";
-import { Entidade } from "./Entidade.js";
+import { Totalizavel } from "./Totalizavel.mjs";
+import { Entidade } from "./Entidade.mjs";
 //falta MUCHA coisa!!!
-
-
 
 export class Venda extends Entidade{
 
@@ -23,6 +21,7 @@ export class Venda extends Entidade{
     }
 
     constructor(){
+        super();
         Totalizavel(Venda);
         this.dataHora = new Date().toLocaleString();
         this.itens = [];
@@ -43,18 +42,18 @@ export class Venda extends Entidade{
     removerItem(posicao_ou_nome){
         if(typeof posicao_ou_nome === 'number')
             this.itens.splice(posicao_ou_nome, 1);
+
+        /**
+         * @overload
+         */
         if(typeof posicao_ou_nome === 'string'){
-            i = 0;
-            for(let item of this.itens){
-                if(item.getProduto().getNome() === posicao_ou_nome){
-                    this.itens.splice(i, 1);
-                    break;
-                }
-                i++;
-            }
+            this.itens = this.itens.filter(i => i.getProduto.getNome().toLowerCase() !== posicao_ou_nome.toLowerCase());
         }        
     }
 
+    /**
+     * @override
+     */
     toString(){
         stringBuilder = `Data-Hora: ${super.toString()}`;
 
@@ -76,4 +75,6 @@ export class Venda extends Entidade{
         
         return t;
     }
+
+
 }

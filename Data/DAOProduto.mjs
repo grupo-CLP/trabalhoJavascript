@@ -25,13 +25,8 @@ export class DAOProduto{
     remover(id_nome){
         if(typeof id_nome === 'number')
             DAOProduto.#dao.remover(id_nome);
-        if(typeof id_nome === 'string'){
-            for(let produto of this.dao.getDados()){
-                if(produto.getNome() == id_nome)
-                    DAOProduto.#dao.remover(id_nome);
-            }
-            return null;
-        }
+        if(typeof id_nome === 'string')
+            DAOProduto.#dao = DAOProduto.#dao.filter(i => i.getDados().getNome().toLowerCase() !== id_nome.toLowerCase());
     }
 
     toString(){

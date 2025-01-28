@@ -1,7 +1,7 @@
 export class Entidade{
     
     constructor(){
-        if(this.constructor == MenuAbstrato)
+        if(this.constructor == Entidade)
             throw new Error("Classes abstratas não podem ser instanciadas\n");
         this.id = +new Date();
     }

@@ -1,9 +1,9 @@
-import { Entidade } from "./Entidade.js"
+import { Entidade } from "./Entidade.mjs"
 
 export class Produto extends Entidade{
     constructor(nome, valor){
-        if(typeof nome === undefined && valor === undefined){
-            super();
+        super();
+        if(nome === undefined && valor === undefined){
             this.nome = "";
             this.valor = 0.0;
         }else if (typeof nome === "string" && typeof valor === "number"){
@@ -30,7 +30,10 @@ export class Produto extends Entidade{
         this.valor = valor;
     }
     
+    /**
+     * @override
+     */
     toString() {
-        return `${super.toString}Nome: ${this.nome}\tValor: ${this.valor.toFixed(2)}`;
+        return `${super.toString()}Nome: ${this.nome}\tValor: ${this.valor.toFixed(2)}`;
     }
 }

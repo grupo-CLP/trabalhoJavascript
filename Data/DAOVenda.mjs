@@ -1,4 +1,4 @@
-import { Venda } from '../entidades/Venda.js';
+import { Venda } from '../entidades/Venda.mjs';
 import { DAO } from './DAO.js';
 
 export class DAOVenda{

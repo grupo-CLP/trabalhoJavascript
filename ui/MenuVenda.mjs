@@ -1,9 +1,9 @@
 import { MenuEntidade } from './MenuEntidade.js';
 import { DAOVenda } from '../Data/DAOVenda.js';
 import { DAOProduto } from '../Data/DAOProduto.js';
-import { Venda } from '../entidades/Venda.js';
+import { Venda } from '../entidades/Venda.mjs';
 //produto é usado sim, apenas nao explicitamente
-import { Produto } from '../entidades/Produto.js';
+import { Produto } from '../entidades/Produto.mjs';
 
 export class MenuVenda extends MenuEntidade{
 

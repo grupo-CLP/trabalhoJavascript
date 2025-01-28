@@ -1,6 +1,6 @@
 import { MenuAbstrato } from "./MenuAbstrato.js";
-import { MenuProduto } from "./MenuProduto.js";
-import { MenuVenda } from './MenuVenda.js';
+import { MenuProduto } from "./MenuProduto.mjs";
+import { MenuVenda } from './MenuVenda.mjs';
 
 export class MenuPrincipal extends MenuAbstrato{
     constructor(){
