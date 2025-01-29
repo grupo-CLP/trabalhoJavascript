@@ -1,3 +1,5 @@
+import readlineSync from 'readline-sync';
+
 export class MenuAbstrato{
 
     constructor(){
@@ -6,13 +8,13 @@ export class MenuAbstrato{
     }
 
     mostrarMenu(){
-        let opcao = 0;
+        var opcao = 0;
         
         do{
             console.log("\n\n");
-            mostrarTitulo();
-            mostrarOpcoes();
-            opcao = executarOpcao(Number(prompt("INFORME A SUA OPCAO: \n")));
+            this.mostrarTitulo();
+            this.mostrarOpcoes();
+            opcao = this.executarOpcao(Number(readlineSync.question("INFORME A SUA OPCAO: \n")));
         }while(opcao != 0);
     }
 

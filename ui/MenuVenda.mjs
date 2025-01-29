@@ -1,6 +1,6 @@
-import { MenuEntidade } from './MenuEntidade.js';
-import { DAOVenda } from '../Data/DAOVenda.js';
-import { DAOProduto } from '../Data/DAOProduto.js';
+import { MenuEntidade } from './MenuEntidade.mjs';
+import { DAOVenda } from '../Data/DAOVenda.mjs';
+import { DAOProduto } from '../Data/DAOProduto.mjs';
 import { Venda } from '../entidades/Venda.mjs';
 //produto é usado sim, apenas nao explicitamente
 import { Produto } from '../entidades/Produto.mjs';
@@ -31,16 +31,16 @@ export class MenuVenda extends MenuEntidade{
      * @override
      */
     adicionar(){
-        venda = new Venda()
-        let produto = null;
+        var venda = new Venda()
+        var produto = null;
 
         qtde = 0;
 
         while(true){
             while(true){
                 try{
-                    produto = this.daoProduto.buscar(prompt("Digite o nome do produto: \n"));
-                    qtde = Number(prompt("Digite a quantidade: \n"));
+                    produto = this.daoProduto.buscar(readlineSync.question("Digite o nome do produto: \n"));
+                    qtde = Number(readlineSync.question("Digite a quantidade: \n"));
                     
                     if(produto == null || qtde <= 0)
                         throw new Error("Favor informar os dados corretamente\n");
@@ -52,7 +52,7 @@ export class MenuVenda extends MenuEntidade{
             }
                 venda.adicionarItem(produto, qtde);
         
-                maisItens = Number(prompt("Deseja adicionar outro produto à venda (1 - SIM/0 - NAO)? \n"));
+                maisItens = Number(readlineSync.question("Deseja adicionar outro produto à venda (1 - SIM/0 - NAO)? \n"));
         
                 if(maisItens != 1)
                     break;
@@ -67,12 +67,12 @@ export class MenuVenda extends MenuEntidade{
      * @override
      */
     remover(){
-        id = 0;
+        var id = 0;
 
         while(true){
 
             try{
-                id = Number(prompt("Digite a quantidade: \n"));
+                id = Number(readlineSync.question("Digite a quantidade: \n"));
 
                 if (id <= 0.0)
                     throw new Error("Favor informar os dados corretamente\n");

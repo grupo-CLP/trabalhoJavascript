@@ -1,14 +1,12 @@
-import { MenuAbstrato } from "./MenuAbstrato.js";
+import { MenuAbstrato } from "./MenuAbstrato.mjs";
 
 export class MenuEntidade extends MenuAbstrato{
 
     constructor(){
-        if(this.constructor == MenuAbstrato)constructor(){
-            if(this.constructor == MenuAbstrato)
-                throw new Error("Classes abstratas não podem ser instanciadas\n");
-            this.id = +new Date();
-        }
+        super();
+        if(this.constructor == MenuEntidade)
             throw new Error("Classes abstratas não podem ser instanciadas\n");
+        this.id = +new Date();
     }
 
     listar(){
@@ -32,15 +30,15 @@ export class MenuEntidade extends MenuAbstrato{
                 return 0;
             
             case 1:
-                listar();
+                this.listar();
                 break;
 
             case 2:
-                adicionar();
+                this.adicionar();
                 break;
 
             case 3:
-                remover();
+                this.remover();
                 break;
             
             default:

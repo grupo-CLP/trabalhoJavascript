@@ -1,11 +1,11 @@
 import { Venda } from '../entidades/Venda.mjs';
-import { DAO } from './DAO.js';
+import { DAO } from './DAO.mjs';
 
 export class DAOVenda{
     static #instance = new DAOVenda();
     static #dao = new DAO();
 
-    getInstance(){
+    static getInstance(){
         return DAOVenda.#instance;
     }
 

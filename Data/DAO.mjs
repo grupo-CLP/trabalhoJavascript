@@ -27,10 +27,8 @@ export class DAO{
     }
 
     /**
-     * 
      * @override
      */
-
     toString(){
         string = "";
         for(let dado of this.dados)

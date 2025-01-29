@@ -1,10 +1,10 @@
-import { DAO } from "./DAO.js";
+import { DAO } from "./DAO.mjs";
 
 export class DAOProduto{
     static #instance = new DAOProduto();
     static #dao = new DAO();
 
-    getInstance(){
+    static getInstance(){
         return DAOProduto.#instance;
     }
 

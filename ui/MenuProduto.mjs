@@ -1,10 +1,9 @@
-import { MenuEntidade } from "./MenuEntidade.js";
-import { DAOProduto } from "../Data/DAOProduto.js";
+import { MenuEntidade } from "./MenuEntidade.mjs";
+import { DAOProduto } from "../Data/DAOProduto.mjs";
 import { Produto } from "../entidades/Produto.mjs";
 
 
 export class MenuProduto extends MenuEntidade{
-    
     
     constructor(){
         super();
@@ -29,14 +28,14 @@ export class MenuProduto extends MenuEntidade{
      * @override
      */
     adicionar(){
-        nome = null;
-        valor = 0.0;
+        var nome = "";
+        var valor = 0.0;
 
         while(true){
             try{
-                nome = prompt("Digite o nome: ");
+                nome = readlineSync.question("Digite o nome: ");
 
-                valor = Number(prompt("Digite o valor: "));
+                valor = Number(readlineSync.question("Digite o valor: "));
 
                 if(nome ==  null || nome == "" || valor <= 0.0)
                     throw new Error("Favor informar os dados corretamente\n");
@@ -54,11 +53,11 @@ export class MenuProduto extends MenuEntidade{
      * @override
      */
     remover(){
-        nome = null;
+        var nome = null;
 
         while(true){
             try{
-                nome = prompt("Digite o nome: ");
+                nome = readlineSync.question("Digite o nome: ");
 
                 if(nome == null || nome == "")
                     throw new Error("Favor informar o nome corretamente\n");

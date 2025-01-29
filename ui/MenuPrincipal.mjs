@@ -1,4 +1,4 @@
-import { MenuAbstrato } from "./MenuAbstrato.js";
+import { MenuAbstrato } from "./MenuAbstrato.mjs";
 import { MenuProduto } from "./MenuProduto.mjs";
 import { MenuVenda } from './MenuVenda.mjs';
 
@@ -18,11 +18,11 @@ export class MenuPrincipal extends MenuAbstrato{
                 return 0;
 
             case 1:
-                menuProduto.mostrarMenu(scanner);
+                this.menuProduto.mostrarMenu();
                 break;
 
             case 2:
-                menuVenda.mostrarMenu(scanner);
+                this.menuVenda.mostrarMenu();
                 break;
 
             default:
