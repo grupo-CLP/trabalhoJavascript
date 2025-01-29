@@ -2,6 +2,7 @@ import { MenuEntidade } from './MenuEntidade.mjs';
 import { DAOVenda } from '../Data/DAOVenda.mjs';
 import { DAOProduto } from '../Data/DAOProduto.mjs';
 import { Venda } from '../entidades/Venda.mjs';
+import readlineSync from 'readline-sync';
 //produto é usado sim, apenas nao explicitamente
 import { Produto } from '../entidades/Produto.mjs';
 

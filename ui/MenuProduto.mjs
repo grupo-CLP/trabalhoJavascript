@@ -1,6 +1,7 @@
 import { MenuEntidade } from "./MenuEntidade.mjs";
 import { DAOProduto } from "../Data/DAOProduto.mjs";
 import { Produto } from "../entidades/Produto.mjs";
+import readlineSync from 'readline-sync';
 
 
 export class MenuProduto extends MenuEntidade{
@@ -44,9 +45,8 @@ export class MenuProduto extends MenuEntidade{
             }catch(err){
                 console.log(err.message);
             }
-
-            this.dao.adicionar(new Produto(nome, valor));
         }
+        this.dao.adicionar(new Produto(nome, valor));
     }
 
     /**

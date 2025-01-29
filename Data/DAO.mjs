@@ -16,7 +16,7 @@ export class DAO{
     }
 
     buscar(id){
-        for(let dado of this.dados)
+        for(var dado of this.dados)
             if(dado.getId() == id)
                 return dado;
         return null;
@@ -30,8 +30,8 @@ export class DAO{
      * @override
      */
     toString(){
-        string = "";
-        for(let dado of this.dados)
+        var string = "";
+        for(var dado of this.dados)
             string += `\n${dado.toString()}`;
 
         return string;
