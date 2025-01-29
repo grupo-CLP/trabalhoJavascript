@@ -55,10 +55,10 @@ export class Venda extends Entidade{
      * @override
      */
     toString(){
-        stringBuilder = `Data-Hora: ${super.toString()}`;
+        var stringBuilder = `Data-Hora: ${super.toString()}`;
 
-        for(let itemVenda of this.itens)
-            stringBuilder += `\n ${itemVenda.toString()}`;
+        for(var i = 0; i < this.itens.length; i++)
+            stringBuilder += `\n ${this.itens[i].toString()}`;
         stringBuilder += `\nTOTAL ${total()}`;
 
         return stringBuilder;
@@ -68,10 +68,10 @@ export class Venda extends Entidade{
      * @override
      */
     total(){
-        t = 0.0;
+        var t = 0.0;
 
-        for(let itemVenda of this.itens)
-            t += itemVenda.valor * itemVenda.qtd
+        for(var i = 0; i < this.itens.length; i++)
+            t += this.itens[i].valor * this.itens[i].qtd;
         
         return t;
     }
