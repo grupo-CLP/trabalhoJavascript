@@ -7,6 +7,9 @@ export class MenuAbstrato{
             throw new Error("Classes abstratas não podem ser instanciadas\n");
     }
 
+    /**
+     * @returns {void}
+     */
     mostrarMenu(){
         var opcao = 0;
         
@@ -18,15 +21,24 @@ export class MenuAbstrato{
         }while(opcao != 0);
     }
 
-
+    /**
+     * @param {Number} opcao 
+     * @returns {void}
+     */
     executarOpcao(opcao){
         throw new Error("Metodo deve ser implementado\n");
     }
 
+    /**
+     * @returns {void}
+     */
     mostrarOpcoes(){
         throw new Error("Metodo deve ser implementado\n");
     }
 
+    /**
+     * @returns {void}
+     */
     mostrarTitulo(){
         throw new Error("Metodo deve ser implementado\n");
     }

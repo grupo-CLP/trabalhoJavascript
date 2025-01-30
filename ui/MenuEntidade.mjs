@@ -9,20 +9,31 @@ export class MenuEntidade extends MenuAbstrato{
         this.id = +new Date();
     }
 
+    /**
+     * @returns {void}
+     */
     listar(){
         throw new Error("Metodo deve ser implementado\n");
     }
 
+    /**
+     * @returns {void}
+     */
     adicionar(){
         throw new Error("Metodo deve ser implementado\n");
     }
 
+    /**
+     * @returns {void}
+     */
     remover(){
         throw new Error("Metodo deve ser implementado\n");
     }
 
     /**
      * @override
+     * @param {Number} opcao 
+     * @returns {Number}
      */
     executarOpcao(opcao){
         switch(opcao){
@@ -49,6 +60,7 @@ export class MenuEntidade extends MenuAbstrato{
 
     /**
      * @override
+     * @returns {void}
      */
     mostrarOpcoes(){
         console.log(

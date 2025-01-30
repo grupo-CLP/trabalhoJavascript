@@ -11,6 +11,8 @@ export class MenuPrincipal extends MenuAbstrato{
 
     /**
      * @override
+     * @param {Number} opcao 
+     * @returns {Number}
      */
     executarOpcao(opcao){
         switch(opcao){
@@ -34,6 +36,7 @@ export class MenuPrincipal extends MenuAbstrato{
 
     /**
      * @override
+     * @returns {void}
      */
     mostrarOpcoes(){
         console.log((
@@ -44,6 +47,7 @@ export class MenuPrincipal extends MenuAbstrato{
 
     /**
      * @override
+     * @returns {void}
      */
     mostrarTitulo(){
         console.log("MENU PRINCIPAL\n")

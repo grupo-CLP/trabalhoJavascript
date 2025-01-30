@@ -16,6 +16,7 @@ export class MenuVenda extends MenuEntidade{
 
     /**
      * @override
+     * @returns {void}
      */
     mostrarTitulo(){
         console.log("MENU VENDAS");
@@ -23,6 +24,7 @@ export class MenuVenda extends MenuEntidade{
 
     /**
      * @override
+     * @returns {void}
      */
     listar(){
         console.log(this.daoVenda.toString());
@@ -30,17 +32,17 @@ export class MenuVenda extends MenuEntidade{
 
     /**
      * @override
+     * @returns {void}
      */
     adicionar(){
-        var venda = new Venda()
+        var venda = new Venda();
         var produto = null;
 
-        qtde = 0;
-
+        var qtde = 0;
         while(true){
             while(true){
                 try{
-                    produto = this.daoProduto.buscar(readlineSync.question("Digite o nome do produto: \n"));
+                    produto = this.daoProduto.buscar(readlineSync.question("Digite o nome ou ID do produto: \n"));
                     qtde = Number(readlineSync.question("Digite a quantidade: \n"));
                     
                     if(produto == null || qtde <= 0)
@@ -53,7 +55,7 @@ export class MenuVenda extends MenuEntidade{
             }
                 venda.adicionarItem(produto, qtde);
         
-                maisItens = Number(readlineSync.question("Deseja adicionar outro produto à venda (1 - SIM/0 - NAO)? \n"));
+                var maisItens = Number(readlineSync.question("Deseja adicionar outro produto à venda (1 - SIM/0 - NAO)? \n"));
         
                 if(maisItens != 1)
                     break;
@@ -66,6 +68,7 @@ export class MenuVenda extends MenuEntidade{
 
     /**
      * @override
+     * @returns {void}
      */
     remover(){
         var id = 0;
@@ -73,7 +76,7 @@ export class MenuVenda extends MenuEntidade{
         while(true){
 
             try{
-                id = Number(readlineSync.question("Digite a quantidade: \n"));
+                id = Number(readlineSync.question("Digite o ID: \n"));
 
                 if (id <= 0.0)
                     throw new Error("Favor informar os dados corretamente\n");

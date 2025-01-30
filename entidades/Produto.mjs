@@ -1,6 +1,10 @@
 import { Entidade } from "./Entidade.mjs"
 
 export class Produto extends Entidade{
+    /**
+     * @param {String} nome 
+     * @param {Number} valor 
+     */
     constructor(nome, valor){
         super();
         if(nome === undefined && valor === undefined){
@@ -14,24 +18,39 @@ export class Produto extends Entidade{
         }
     }
 
+    /**
+     * @returns {String}
+     */
     getNome(){
         return this.nome;
     }
 
+    /**
+     * @returns {Number}
+     */
     getValor() {
         return this.valor;
     }
     
+    /**
+     * @param {String} nome
+     * @returns {void} 
+     */
     setNome(nome) {
         this.nome = nome;
     }
     
+    /**
+     * @param {Number} valor 
+     * @returns {void}
+     */
     setValor(valor) {
         this.valor = valor;
     }
     
     /**
      * @override
+     * @returns {String}
      */
     toString() {
         return `${super.toString()}Nome: ${this.nome}\tValor: ${this.valor.toFixed(2)}`;

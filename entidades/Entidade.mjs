@@ -6,10 +6,16 @@ export class Entidade{
         this.id = +new Date();
     }
 
+    /**
+     * @returns {Number}
+     */
     getId(){
         return this.id;
     }
 
+    /**
+     * @returns {String}
+     */
     toString(){
         return `ID: ${this.id}\t`;
     }

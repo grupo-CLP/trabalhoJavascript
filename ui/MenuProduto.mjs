@@ -13,6 +13,7 @@ export class MenuProduto extends MenuEntidade{
 
     /**
      * @override
+     * @returns {void}
      */
     mostrarTitulo(){
         console.log("MENU PRODUTOS");
@@ -20,6 +21,7 @@ export class MenuProduto extends MenuEntidade{
 
     /**
      * @override
+     * @returns {void}
      */
     listar(){
         console.log(this.dao.toString());
@@ -27,6 +29,7 @@ export class MenuProduto extends MenuEntidade{
 
     /**
      * @override
+     * @returns {void}
      */
     adicionar(){
         var nome = "";
@@ -51,13 +54,14 @@ export class MenuProduto extends MenuEntidade{
 
     /**
      * @override
+     * @returns {void}
      */
     remover(){
         var nome = null;
 
         while(true){
             try{
-                nome = readlineSync.question("Digite o nome: ");
+                nome = readlineSync.question("Digite o nome ou ID: ");
 
                 if(nome == null || nome == "")
                     throw new Error("Favor informar o nome corretamente\n");
