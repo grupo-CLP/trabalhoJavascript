@@ -32,8 +32,8 @@ export class MenuProduto extends MenuEntidade{
      * @returns {void}
      */
     adicionar(){
-        var nome = "";
-        var valor = 0.0;
+        let nome = "";
+        let valor = 0.0;
 
         while(true){
             try{
@@ -57,7 +57,7 @@ export class MenuProduto extends MenuEntidade{
      * @returns {void}
      */
     remover(){
-        var nome = null;
+        let nome = null;
 
         while(true){
             try{

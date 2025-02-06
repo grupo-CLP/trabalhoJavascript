@@ -35,10 +35,10 @@ export class MenuVenda extends MenuEntidade{
      * @returns {void}
      */
     adicionar(){
-        var venda = new Venda();
-        var produto = null;
+        let venda = new Venda();
+        let produto = null;
 
-        var qtde = 0;
+        let qtde = 0;
         while(true){
             while(true){
                 try{
@@ -55,7 +55,7 @@ export class MenuVenda extends MenuEntidade{
             }
                 venda.adicionarItem(produto, qtde);
         
-                var maisItens = Number(readlineSync.question("Deseja adicionar outro produto à venda (1 - SIM/0 - NAO)? \n"));
+                let maisItens = Number(readlineSync.question("Deseja adicionar outro produto à venda (1 - SIM/0 - NAO)? \n"));
         
                 if(maisItens != 1)
                     break;
@@ -71,7 +71,7 @@ export class MenuVenda extends MenuEntidade{
      * @returns {void}
      */
     remover(){
-        var id = 0;
+        let id = 0;
 
         while(true){
 

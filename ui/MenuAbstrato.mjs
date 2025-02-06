@@ -11,7 +11,7 @@ export class MenuAbstrato{
      * @returns {void}
      */
     mostrarMenu(){
-        var opcao = 0;
+        let opcao = 0;
         
         do{
             console.log("\n\n");

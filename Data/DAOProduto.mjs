@@ -14,6 +14,7 @@ export class DAOProduto{
 
     /**
      * @param {Produto} produto 
+     * @returns {void}
      */
     adicionar(produto){
         DAOProduto.#dao.adicionar(produto);
@@ -26,6 +27,9 @@ export class DAOProduto{
     buscar(id_nome){
         if(!isNaN(parseFloat(id_nome)))
             return DAOProduto.#dao.buscar(id_nome);
+        /**
+         * @overload
+         */
         else
             for(let produto of DAOProduto.#dao.getDados())
                 if (produto.getNome() == id_nome)
@@ -39,7 +43,10 @@ export class DAOProduto{
      */
     remover(id_nome){
         if(!isNaN(parseFloat(id_nome)))
-            DAOProduto.#dao.remover(id_nome);
+            DAOProduto.#dao.remover(Number(id_nome));
+        /**
+         * @overload
+         */
         else
             DAOProduto.#dao.setDados(DAOProduto.#dao.getDados().filter(i => i.getNome().toLowerCase() !== id_nome.toLowerCase()));
     }

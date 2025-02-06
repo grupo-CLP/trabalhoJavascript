@@ -35,7 +35,7 @@ export class DAO{
      * @returns {Entidade[]}
      */
     buscar(id){
-        for(var dado of this.dados)
+        for(let dado of this.dados)
             if(dado.getId() == id)
                 return dado;
         return null;
@@ -54,8 +54,8 @@ export class DAO{
      * @returns {String}
      */
     toString(){
-        var string = "";
-        for(var dado of this.dados)
+        let string = "";
+        for(let dado of this.dados)
             string += `\n${dado.toString()}`;
 
         return string;
